@@ -50,7 +50,7 @@ namespace WebAPISample.Controllers
         public IActionResult Put([FromBody] Movie movie)
         {
             // Update movie in db logic
-            _context.Update(movie);
+            _context.Update(movie); //may need to be changed
             _context.SaveChanges();
             return Ok();
         }
