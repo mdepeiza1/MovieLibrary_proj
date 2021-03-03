@@ -11,6 +11,36 @@
 				"method": "GET",
 				"header": [],
 				"url": {
+					"raw": "https://localhost:44325/api/movie/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44325/api/movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Title\": \"Tropic Thunder\",\r\n\"Director\": \"Some Guy\",\r\n\"Genre\": \"Comedy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
 					"raw": "https://localhost:44325/api/movie",
 					"protocol": "https",
 					"host": [
@@ -26,12 +56,12 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:44325/api/movie",
+			"name": "https://localhost:44325/api/movie/5",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44325/api/movie/2",
+					"raw": "https://localhost:44325/api/movie/5",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -40,7 +70,36 @@
 					"path": [
 						"api",
 						"movie",
-						"2"
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44325/api/movie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"MovieId\": 6,\r\n\"Title\": \"Alita Battle Angle\",\r\n\"Director\": \"Robert Rodriquez\",\r\n\"Genre\": \"Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44325/api/movie",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie"
 					]
 				}
 			},

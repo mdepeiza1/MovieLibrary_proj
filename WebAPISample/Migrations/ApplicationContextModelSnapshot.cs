@@ -49,11 +49,7 @@ namespace WebAPISample.Migrations
                         new
                         {
                             MovieId = 2,
-<<<<<<< HEAD
-                            Director = "Christoper Nolan",
-=======
                             Director = "Christopher Nolan",
->>>>>>> a6df3f1550d3b804756e32d5a82ca26cfd366df4
                             Genre = "Drama",
                             Title = "The Dark Knight"
                         },
