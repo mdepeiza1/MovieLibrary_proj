@@ -43,6 +43,8 @@ namespace WebAPISample.Controllers
         public IActionResult Post([FromBody]Movie value)
         {
             // Create movie in db logic
+            _context.Add(value);
+            _context.SaveChanges();
             return Ok();
         }
 
@@ -51,6 +53,8 @@ namespace WebAPISample.Controllers
         public IActionResult Put([FromBody] Movie movie)
         {
             // Update movie in db logic
+            _context.Update(movie); //may need to be changed
+            _context.SaveChanges();
             return Ok();
         }
 
@@ -59,6 +63,10 @@ namespace WebAPISample.Controllers
         public IActionResult Delete(int id)
         {
             // Delete movie from db logic
+
+            var mo = _context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
+            _context.Remove(mo);
+            _context.SaveChanges();
             return Ok();
         }
     }

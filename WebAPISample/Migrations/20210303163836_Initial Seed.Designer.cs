@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPISample.Data;
 
 namespace WebAPISample.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210303163836_Initial Seed")]
+    partial class InitialSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,11 +51,7 @@ namespace WebAPISample.Migrations
                         new
                         {
                             MovieId = 2,
-<<<<<<< HEAD
-                            Director = "Christoper Nolan",
-=======
                             Director = "Christopher Nolan",
->>>>>>> a6df3f1550d3b804756e32d5a82ca26cfd366df4
                             Genre = "Drama",
                             Title = "The Dark Knight"
                         },
