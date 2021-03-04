@@ -11,18 +11,19 @@
 </div>
 
 <form id="my-form">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="genre" placeholder="Genre" />
-    <input type="text" name="director" placeholder="Director" />
+    <input type="text" name="movieId" placeholder="Movie ID" id="movieId"/>
+    <input type="text" name="title" placeholder="Title" id="title"/>
+    <input type="text" name="genre" placeholder="Genre" id="genre"/>
+    <input type="text" name="director" placeholder="Director" id="director"/>
 
-    <button type="submit">Details</button>
-    <button type="submit">Add</button>
-    <button type="submit">Update</button>
+    <button type="submit" id="details">Details</button>
+    <button type="submit" id="add">Add</button>
+    <button type="submit" id="update">Update</button>
+    <button type="submit" id="delete">Delete</button>
+    <button type="submit" id="list">List</button>
 </form>
 
 <table id="movie-list">
-    <tr>
-    </tr>
 </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
