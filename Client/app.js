@@ -1,11 +1,11 @@
 (function($){
-    function processForm( e ){
+    /*function processForm( e ){
         var dict = {
             MovieID : this["movieId"].value,
             Title : this["title"].value,
             Genre : this["genre"].value,
             Director: this["director"].value
-        };
+        };*/
         
         /*$.ajax({
             url: 'https://localhost:44325/api/movie',
@@ -22,9 +22,9 @@
         });*/
 
       
-
+/*
         e.preventDefault();
-    }
+    }*/
 
     var $movies = $('#movie-list');
     $.ajax({
@@ -51,7 +51,7 @@
 
 
 
-    $('#my-form').submit( processForm );
+    //$('#my-form').submit( processForm );
 })(jQuery);
 
 
@@ -125,7 +125,7 @@ $('#update').on('click',function(){
         title : $('#title').val(),
         genre : $('#genre').val(),
         director: $('#director').val()
-    }
+    };
     $.ajax({
         url: 'https://localhost:44325/api/movie',
         type: 'PUT',
@@ -146,6 +146,31 @@ $('#update').on('click',function(){
 
 })(jQuery);
 
+(function($){//implement this
+     $('#details').on('click',function(e){
+         var dict = {
+             movieId : parseInt($('#movieId').val())
+         };
+ 
+         $.ajax({
+            url: 'https://localhost:44325/api/movie/'+  parseInt($('#movieId').val()),
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(movie){
+               //$('#titleDetail').value = movie.title;
+               //$('#genreDetail').value = movie.genre;
+               //$('#directorDetail').value = movie.director;
+
+                alert('Title: ' + movie.title + ' Genre: ' + movie.genre + ' Director: ' + movie.director);
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+        e.preventDefault();
+     });
+ })(jQuery);
 
 
 //$('#update').on('click',function(){
