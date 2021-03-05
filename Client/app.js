@@ -1,4 +1,15 @@
 (function($){
+    function processForm( e ){
+        var dict = {
+            MovieID : this["movieId"].value,
+            Title : this["title"].value,
+            Genre : this["genre"].value,
+            Director: this["director"].value
+        };
+        e.preventDefault();
+    }
+
+
     var $movies = $('#movie-list');
     $.ajax({
         url: 'https://localhost:44325/api/movie',
@@ -12,6 +23,8 @@
             console.log( errorThrown );
         }
     });
+
+    $('#my-form').submit( processForm );
 })(jQuery);
 
 
@@ -25,14 +38,15 @@
 
         $.ajax({
             url: 'https://localhost:44325/api/movie',
-            dataType: 'json',
+            //dataType: 'json',
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( movie, textStatus, jQxhr ){
-                $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
+               // $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
             },
             error: function( jqXhr, textStatus, errorThrown ){
+                alert('Please refresh, ADD');
                 console.log( errorThrown );
             }
         });
@@ -55,11 +69,11 @@ $('#update').on('click',function(){
         contentType: 'application/json',
         data: JSON.stringify(dict),
         success: function(data, textStatus, jQxhr ){
-            $('#response pre').html( data );
+            //$('#response pre').html( data );
             console.log(data);
         },
         error: function( jqXhr, textStatus, errorThrown ){
-            alert('error');
+            alert('Please refresh, PUT');
             console.log( errorThrown );
         }
     });
@@ -83,6 +97,7 @@ $('#update').on('click',function(){
                 alert('Title: ' + movie.title + ' Genre: ' + movie.genre + ' Director: ' + movie.director);
             },
             error: function( jqXhr, textStatus, errorThrown ){
+                alert('Please refresh, DETAILS');
                 console.log( errorThrown );
             }
         });
@@ -102,11 +117,11 @@ $('#update').on('click',function(){
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function(data, textStatus, jQxhr ){
-                $movies.remove( data );
+                //$movies.remove( data );
                 console.log(data);
             },
             error: function( jqXhr, textStatus, errorThrown ){
-                alert('error');
+                alert('Please refresh, DELETE');
                 console.log( errorThrown );
             }
         });
