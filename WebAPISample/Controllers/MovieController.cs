@@ -45,7 +45,7 @@ namespace WebAPISample.Controllers
             // Create movie in db logic
             _context.Add(value);
             _context.SaveChanges();
-            return Ok(RedirectToAction(nameof(Index)));
+            return Ok();
         }
         
         // PUT api/movie
@@ -62,7 +62,7 @@ namespace WebAPISample.Controllers
             mov.Genre = movie.Genre;
             mov.Director = movie.Director;
             _context.SaveChanges();
-            return Ok(RedirectToAction(nameof(Index)));
+            return Ok(mov);
         }
 
         // DELETE api/movie/5
@@ -74,7 +74,7 @@ namespace WebAPISample.Controllers
             var mo = _context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
             _context.Remove(mo);
             _context.SaveChanges();
-            return Ok(RedirectToAction(nameof(Index)));
+            return Ok(mo);
         }
     }
 }
