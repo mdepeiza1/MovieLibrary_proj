@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "9a9f88ca-350c-4afe-b226-e61b402ebbba",
+		"name": "Postman Movie Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44325/api/movie/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44325/api/movie/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44325",
+							"path": [
+								"api",
+								"movie",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Mar 2021 20:26:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"movieId\": 1,\n        \"title\": \"The Departed\",\n        \"genre\": \"Drama\",\n        \"director\": \"Martin Scorsese\"\n    },\n    {\n        \"movieId\": 2,\n        \"title\": \"The Dark Knight\",\n        \"genre\": \"Drama\",\n        \"director\": \"Christopher Nolan\"\n    },\n    {\n        \"movieId\": 3,\n        \"title\": \"Inception\",\n        \"genre\": \"Drama\",\n        \"director\": \"Christopher Nolan\"\n    },\n    {\n        \"movieId\": 10,\n        \"title\": \"T\",\n        \"genre\": \"Z\",\n        \"director\": \"M\"\n    },\n    {\n        \"movieId\": 19,\n        \"title\": \"Avatar\",\n        \"genre\": \"Adventure\",\n        \"director\": \"Christopher Nolan\"\n    },\n    {\n        \"movieId\": 20,\n        \"title\": \"Avatar\",\n        \"genre\": \"Adventure\",\n        \"director\": \"Christopher Nolan\"\n    },\n    {\n        \"movieId\": 22,\n        \"title\": \"Avatar\",\n        \"genre\": \"Adventure\",\n        \"director\": \"Christopher Nolan\"\n    },\n    {\n        \"movieId\": 23,\n        \"title\": \"Avatar\",\n        \"genre\": \"Adventure\",\n        \"director\": \"\"\n    },\n    {\n        \"movieId\": 26,\n        \"title\": \"Avatar\",\n        \"genre\": \"Adventure\",\n        \"director\": \"Stanley Kubrick\"\n    },\n    {\n        \"movieId\": 27,\n        \"title\": \"Avengers\",\n        \"genre\": \"Documentary\",\n        \"director\": \"Tim\"\n    },\n    {\n        \"movieId\": 29,\n        \"title\": \"R\",\n        \"genre\": \"G\",\n        \"director\": \"B\"\n    },\n    {\n        \"movieId\": 31,\n        \"title\": \"Avengers\",\n        \"genre\": \"Drama\",\n        \"director\": \"Martin Scorsese\"\n    },\n    {\n        \"movieId\": 32,\n        \"title\": \"L\",\n        \"genre\": \"O\",\n        \"director\": \"Z\"\n    },\n    {\n        \"movieId\": 33,\n        \"title\": \"Avat\",\n        \"genre\": \"Advent\",\n        \"director\": \"James Camer\"\n    },\n    {\n        \"movieId\": 34,\n        \"title\": \"Tropic Thunder\",\n        \"genre\": \"Documentary\",\n        \"director\": \"George\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Specific",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44325/api/movie/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44325/api/movie/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44325",
+							"path": [
+								"api",
+								"movie",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Mar 2021 20:27:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movieId\": 3,\n    \"title\": \"Inception\",\n    \"genre\": \"Drama\",\n    \"director\": \"Christopher Nolan\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tropic Thunder\",\r\n    \"genre\": \"Document\",\r\n    \"director\": \"George\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44325/api/movie/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Tropic Thunder\",\r\n    \"genre\": \"Document\",\r\n    \"director\": \"George\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44325/api/movie/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44325",
+							"path": [
+								"api",
+								"movie",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Mar 2021 20:27:26 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"movieId\": 33,\r\n        \"title\": \"Ava\",\r\n        \"genre\": \"Adven\",\r\n        \"director\": \"James\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44325/api/movie/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44325",
+					"path": [
+						"api",
+						"movie",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Put",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"movieId\": 33,\r\n        \"title\": \"Ava\",\r\n        \"genre\": \"Adven\",\r\n        \"director\": \"James\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44325/api/movie/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44325",
+							"path": [
+								"api",
+								"movie",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Mar 2021 20:27:48 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
