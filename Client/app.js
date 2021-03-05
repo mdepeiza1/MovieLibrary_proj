@@ -132,7 +132,7 @@ $('#update').on('click',function(e){
 
 (function($){
     $('#searchTitle').keyup(function(){
-        $('#resultTitle').html('');
+        $('#result').html('');
         var searchfield = $('#searchTitle').val();
         var expression = new RegExp(searchfield, "i");
         var $movies = $('#movie-list');
@@ -142,7 +142,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.title.search(expression) != -1){
-                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
@@ -156,7 +156,7 @@ $('#update').on('click',function(e){
 
 (function($){
     $('#searchGenre').keyup(function(){
-        $('#resultTitle').html('');
+        $('#result').html('');
         var searchfield = $('#searchGenre').val();
         var expression = new RegExp(searchfield, "i");
         var $movies = $('#movie-list');
@@ -166,7 +166,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.genre.search(expression) != -1){
-                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
@@ -180,7 +180,7 @@ $('#update').on('click',function(e){
 
 (function($){
     $('#searchDirector').keyup(function(){
-        $('#resultTitle').html('');
+        $('#result').html('');
         var searchfield = $('#searchDirector').val();
         var expression = new RegExp(searchfield, "i");
         var $movies = $('#movie-list');
@@ -190,7 +190,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.director.search(expression) != -1){
-                        $('#resultTitle').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
+                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
