@@ -62,7 +62,7 @@ namespace WebAPISample.Controllers
             mov.Genre = movie.Genre;
             mov.Director = movie.Director;
             _context.SaveChanges();
-            return Ok();
+            return Ok(mov);
         }
 
         // DELETE api/movie/5
@@ -74,7 +74,7 @@ namespace WebAPISample.Controllers
             var mo = _context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
             _context.Remove(mo);
             _context.SaveChanges();
-            return Ok();
+            return Ok(mo);
         }
     }
 }
