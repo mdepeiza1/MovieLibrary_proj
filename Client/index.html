@@ -76,6 +76,41 @@ body {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.table {
+    position: absolute;
+    top: 100px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 5px 5px 20px black;
+}
+
+.table thead tr {
+    background-color: rgb(255, 0, 0);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 8px 10px;
+}
+
+.table tbody tr {
+    border: 2px rgb(0, 0, 0);
+}
+
+.table tbody tr:nth-of-type(odd){
+    background-color: rgba(0, 0, 255, 0.932);
+}
+
+.table tbody tr:last-of-type {
+    border-bottom:  2px solid rgb(0, 0, 255);
+}
     </style>
 </head>
 <body>
@@ -99,14 +134,19 @@ body {
     <!-- <input type='text' readonly class='form-control-plaintext' id='directorDetail' value='Chosen Movie director'></input> -->
 </form>
 
-<table style="position: absolute; top: 100px;" id="movie-list">
-    <tr>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Director</th>
-    </tr>
-    <tr>
-    </tr>
+<table class="table" id="movie-list">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Director</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
 </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

@@ -5,24 +5,8 @@
             Title : this["title"].value,
             Genre : this["genre"].value,
             Director: this["director"].value
-        };*/
-        
-        /*$.ajax({
-            url: 'https://localhost:44325/api/movie',
-            dataType: 'json',
-            type: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify(dict),
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( data );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });*/
+        };
 
-      
-/*
         e.preventDefault();
     }*/
 
@@ -56,12 +40,8 @@
 
 
 (function($){
-    
-    
-   // function addButton( u ){
     $('#add').on('click',function(){
         var dict = {
-            //movieId : parseInt(this["movieId"].value),
         	title : $('#title').val(),
         genre : $('#genre').val(),
         director: $('#director').val()
@@ -80,46 +60,12 @@
                 console.log( errorThrown );
             }
         });
-
-       // u.preventDefault();
     });
-
-   // $('#my-form').submit( addButton );
 })(jQuery);
 
 
-(function($){
-
-    /*function updateButton( upd ){
-        var dict = {
-            MovieID : this["movieId"].value,
-        	Title : this["title"].value,
-            Genre : this["genre"].value,
-        	Director: this["director"].value
-        };
-
-        $.ajax({
-            url: 'https://localhost:44325/api/movie',
-            dataType: 'json',
-            type: 'put',
-            contentType: 'application/json',
-            data: JSON.stringify(dict),
-            success: function( movie, textStatus, jQxhr ){
-                $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.title + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-
-        upd.preventDefault();
-    }
-    
-    $('#my-form').submit( updateButton );*/
-
-    
+(function($){    
 $('#update').on('click',function(){
-
     let dict = {
         movieId : parseInt($('#movieId').val()),
         title : $('#title').val(),
