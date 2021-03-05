@@ -29,7 +29,7 @@
 
 
 (function($){
-    $('#add').on('click',function(){
+    $('#add').on('click',function(e){
         var dict = {
         	title : $('#title').val(),
         genre : $('#genre').val(),
@@ -38,24 +38,26 @@
 
         $.ajax({
             url: 'https://localhost:44325/api/movie',
-            //dataType: 'json',
+            
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( movie, textStatus, jQxhr ){
-               // $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
+                $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
+                location.reload();
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 alert('Please refresh, ADD');
                 console.log( errorThrown );
             }
         });
+        e.preventDefault();
     });
 })(jQuery);
 
 
 (function($){    
-$('#update').on('click',function(){
+$('#update').on('click',function(e){
     let dict = {
         movieId : parseInt($('#movieId').val()),
         title : $('#title').val(),
@@ -65,11 +67,12 @@ $('#update').on('click',function(){
     $.ajax({
         url: 'https://localhost:44325/api/movie',
         type: 'PUT',
-        dataType: 'json',
+        
         contentType: 'application/json',
         data: JSON.stringify(dict),
         success: function(data, textStatus, jQxhr ){
-            //$('#response pre').html( data );
+            $('#response pre').html( data );
+            location.reload();
             console.log(data);
         },
         error: function( jqXhr, textStatus, errorThrown ){
@@ -77,17 +80,13 @@ $('#update').on('click',function(){
             console.log( errorThrown );
         }
     });
-
+    e.preventDefault();
 });
 
 })(jQuery);
 
 (function($){
-     $('#details').on('click',function(e){
-         var dict = {
-             movieId : parseInt($('#movieId').val())
-         };
- 
+     $('#details').on('click',function(e){ 
          $.ajax({
             url: 'https://localhost:44325/api/movie/'+  parseInt($('#movieId').val()),
             type: 'GET',
@@ -106,18 +105,19 @@ $('#update').on('click',function(){
  })(jQuery);
 
  (function($){
-    $('#delete').on('click',function(){
+    $('#delete').on('click',function(e){
         let dict = {
             movieId : parseInt($('#movieId').val())
         }
         $.ajax({
             url: 'https://localhost:44325/api/movie/'+ parseInt($('#movieId').val()),
             type: 'DELETE',
-            dataType: 'json',
+            
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function(data, textStatus, jQxhr ){
-                //$movies.remove( data );
+                $('#response pre').remove( data );
+                location.reload();
                 console.log(data);
             },
             error: function( jqXhr, textStatus, errorThrown ){
@@ -125,5 +125,6 @@ $('#update').on('click',function(){
                 console.log( errorThrown );
             }
         });
+        e.preventDefault();
     });
     })(jQuery);
