@@ -4,7 +4,7 @@
     <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
     <style>
-        html,
+html,
 body {
     margin: 0;
     padding: 0;
@@ -79,7 +79,7 @@ body {
 
 .table {
     position: absolute;
-    top: 100px;
+    top: 300px;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
@@ -121,18 +121,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  width: 80%;
-  height: 80%;
+  background-size: 85% 100%;
+}
+
+input[type=text] {
+  margin: 8px 0;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  background-color: blue;
+  color: red;
 }
     </style>
 </head>
 <body>
-
+<h1 style="margin: auto; position: absolute; font-size: 80px; text-shadow: 2px 2px black;">
+    <span style="color: red;">The</span>
+    <span style="color: rgb(255, 253, 253);">Best</span>
+    <span style="color: rgb(255, 253, 253);">Movie</span>
+    <span style="color: rgba(0, 0, 255, 0.932);">Library</span>
+</h1>
 <div id="response">
     <pre></pre>
 </div>
 
-<form id="my-form">
+<form style="margin-top: 5%; position: absolute;" id="my-form">
     <input type="text" name="movieId" placeholder="Movie ID" id="movieId"/>
     <input type="text" name="title" placeholder="Title" id="title"/>
     <input type="text" name="genre" placeholder="Genre" id="genre"/>
