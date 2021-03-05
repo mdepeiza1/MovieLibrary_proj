@@ -47,7 +47,7 @@
                 location.reload();
             },
             error: function( jqXhr, textStatus, errorThrown ){
-                alert('Please refresh, ADD');
+                alert('error');
                 console.log( errorThrown );
             }
         });
@@ -76,7 +76,7 @@ $('#update').on('click',function(e){
             console.log(data);
         },
         error: function( jqXhr, textStatus, errorThrown ){
-            alert('Please refresh, PUT');
+            alert('Movie ID needs to be entered');
             console.log( errorThrown );
         }
     });
@@ -96,7 +96,7 @@ $('#update').on('click',function(e){
                 alert('Title: ' + movie.title + ' Genre: ' + movie.genre + ' Director: ' + movie.director);
             },
             error: function( jqXhr, textStatus, errorThrown ){
-                alert('Please refresh, DETAILS');
+                alert('Movie ID needs to be entered.');
                 console.log( errorThrown );
             }
         });
@@ -121,7 +121,7 @@ $('#update').on('click',function(e){
                 console.log(data);
             },
             error: function( jqXhr, textStatus, errorThrown ){
-                alert('Please refresh, DELETE');
+                alert('Movie ID needs to be entered');
                 console.log( errorThrown );
             }
         });
