@@ -155,8 +155,12 @@ input[type=text] {
     <button class="glow-on-hover" type="submit" id="update">Update</button>
     <button class="glow-on-hover" type="submit" id="delete">Delete</button>
 
-    <input type = "text" name="search" id = "search" placeholder="Search Movies" class="form=control"/>
-    <ul class="list-group" id="result"></ul> 
+    <input type = "text" name="search" id = "searchTitle" placeholder="Search Titles" class="form=control"/>
+    <input type = "text" name="search" id = "searchGenre" placeholder="Search Genres" class="form=control"/>
+    <input type = "text" name="search" id = "searchDirector" placeholder="Search Directors" class="form=control"/>
+    <ul class="list-group" id="resultTitle"></ul> 
+    <ul class="list-group" id="resultGenre"></ul> 
+    <ul class="list-group" id="resultDirector"></ul> 
 </form>
 
 <table class="table" id="movie-list">

@@ -131,9 +131,9 @@ $('#update').on('click',function(e){
 
 
 (function($){
-    $('#search').keyup(function(){
-        $('#result').html('');
-        var searchfield = $('#search').val();
+    $('#searchTitle').keyup(function(){
+        $('#resultTitle').html('');
+        var searchfield = $('#searchTitle').val();
         var expression = new RegExp(searchfield, "i");
         var $movies = $('#movie-list');
         $.ajax({
@@ -141,9 +141,56 @@ $('#update').on('click',function(e){
             type: 'GET',
             success: function(movies){
                 $.each(movies, function(i, movie){
-                    if(movie.title.search(expression) != -1 || movie.genre.search(expression) != -1 ||
-                    movie.director.search(expression) != -1){
-                        $('#result').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                    if(movie.title.search(expression) != -1){
+                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                    }
+                });
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+    });
+})(jQuery);
+
+
+(function($){
+    $('#searchGenre').keyup(function(){
+        $('#resultTitle').html('');
+        var searchfield = $('#searchGenre').val();
+        var expression = new RegExp(searchfield, "i");
+        var $movies = $('#movie-list');
+        $.ajax({
+            url: 'https://localhost:44325/api/movie',
+            type: 'GET',
+            success: function(movies){
+                $.each(movies, function(i, movie){
+                    if(movie.genre.search(expression) != -1){
+                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                    }
+                });
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+    });
+})(jQuery);
+
+
+(function($){
+    $('#searchDirector').keyup(function(){
+        $('#resultTitle').html('');
+        var searchfield = $('#searchDirector').val();
+        var expression = new RegExp(searchfield, "i");
+        var $movies = $('#movie-list');
+        $.ajax({
+            url: 'https://localhost:44325/api/movie',
+            type: 'GET',
+            success: function(movies){
+                $.each(movies, function(i, movie){
+                    if(movie.director.search(expression) != -1){
+                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
                     }
                 });
             },
