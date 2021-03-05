@@ -142,7 +142,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.title.search(expression) != -1){
-                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
+                        $('#result').append('<li class= "list-group-item">' + movie.movieId + " " + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
@@ -166,7 +166,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.genre.search(expression) != -1){
-                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
+                        $('#result').append('<li class= "list-group-item">' + movie.movieId + " " + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
@@ -190,7 +190,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.director.search(expression) != -1){
-                        $('#result').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
+                        $('#result').append('<li class= "list-group-item">' + movie.movieId + " " + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
