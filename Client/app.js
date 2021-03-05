@@ -31,6 +31,7 @@
             data: JSON.stringify(dict),
             success: function( movie, textStatus, jQxhr ){
                 $('#response pre').html( '</tr><td>' + movie.movieId + '</td><td>' + movie.genre + '</td><td>' + movie.director + '</td></tr>' );
+                location.reload();
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
@@ -57,6 +58,7 @@ $('#update').on('click',function(e){
         data: JSON.stringify(dict),
         success: function(data, textStatus, jQxhr ){
             $('#response pre').html( data );
+            location.reload();
             console.log(data);
         },
         error: function( jqXhr, textStatus, errorThrown ){
@@ -100,6 +102,7 @@ $('#update').on('click',function(e){
             data: JSON.stringify(dict),
             success: function(data, textStatus, jQxhr ){
                 $('#response pre').remove( data );
+                location.reload();
                 console.log(data);
             },
             error: function( jqXhr, textStatus, errorThrown ){
