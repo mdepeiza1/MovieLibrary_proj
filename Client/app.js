@@ -190,7 +190,7 @@ $('#update').on('click',function(e){
             success: function(movies){
                 $.each(movies, function(i, movie){
                     if(movie.director.search(expression) != -1){
-                        $('#resultTitle').append(movie.title + " " + movie.genre + " " + movie.director + " ");
+                        $('#resultTitle').append('<li class= "list-group-item">' + movie.title + " " + movie.genre + " " + movie.director + '</li>');
                     }
                 });
             },
